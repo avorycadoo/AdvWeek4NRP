@@ -2,13 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/ANMP_Week1_baru" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Week 1" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Week1" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/week 2/ANMP_Week2" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/week 2/ket/ANMP_Week2" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/week 2/ket/Adv160421082Week2" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/week 4" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/week 4/ANMP_Week4" vcs="Git" />
   </component>
 </project>
