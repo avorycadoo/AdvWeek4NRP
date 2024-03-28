@@ -1,0 +1,102 @@
+[
+  {
+      "id": 1,
+      "name": "Bag 1",
+      "items": ["item1", "item2"],
+      "details": {
+          "color": "blue",
+          "size": "medium"
+      },
+      "images": "https://loremflickr.com/320/240/cars?lock=1"
+  },
+  {
+      "id": 2,
+      "name": "Bag 2",
+      "items": ["item3", "item4", "item5"],
+      "details": {
+          "color": "red",
+          "size": "large"
+      },
+      "images": "https://loremflickr.com/320/240/cars?lock=2"
+  },
+  {
+      "id": 3,
+      "name": "Bag 3",
+      "items": ["item6", "item7"],
+      "details": {
+          "color": "green",
+          "size": "small"
+      },
+      "images": "https://loremflickr.com/320/240/cars?lock=3"
+  },
+  {
+      "id": 4,
+      "name": "Bag 4",
+      "items": ["item8"],
+      "details": {
+          "color": "yellow",
+          "size": "medium"
+      },
+      "images": "https://loremflickr.com/320/240/cars?lock=4"
+  },
+  {
+      "id": 5,
+      "name": "Bag 5",
+      "items": ["item9", "item10"],
+      "details": {
+          "color": "orange",
+          "size": "large"
+      },
+      "images": "https://loremflickr.com/320/240/cars?lock=5"
+  },
+  {
+      "id": 6,
+      "name": "Bag 6",
+      "items": ["item11", "item12"],
+      "details": {
+          "color": "purple",
+          "size": "small"
+      },
+      "images": "https://loremflickr.com/320/240/cars?lock=6"
+  },
+  {
+      "id": 7,
+      "name": "Bag 7",
+      "items": ["item13", "item14", "item15"],
+      "details": {
+          "color": "black",
+          "size": "medium"
+      },
+      "images": "https://loremflickr.com/320/240/cars?lock=7"
+  },
+  {
+      "id": 8,
+      "name": "Bag 8",
+      "items": ["item16"],
+      "details": {
+          "color": "white",
+          "size": "large"
+      },
+      "images": "https://loremflickr.com/320/240/cars?lock=8"
+  },
+  {
+      "id": 9,
+      "name": "Bag 9",
+      "items": ["item17", "item18"],
+      "details": {
+          "color": "brown",
+          "size": "small"
+      },
+      "images": "https://loremflickr.com/320/240/cars?lock=9"
+  },
+  {
+      "id": 10,
+      "name": "Bag 10",
+      "items": ["item19", "item20"],
+      "details": {
+          "color": "gray",
+          "size": "medium"
+      },
+      "images": "https://loremflickr.com/320/240/cars?lock=10"
+  }
+]
