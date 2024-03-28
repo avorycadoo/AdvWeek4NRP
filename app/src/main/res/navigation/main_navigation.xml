@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/studentListFragment">
+    app:startDestination="@id/bagListFragment">
 
     <fragment
         android:id="@+id/studentListFragment"
@@ -19,4 +19,13 @@
         android:name="com.example.advweek4nrp.view.StudentDetailFragment"
         android:label="fragment_student_detail"
         tools:layout="@layout/fragment_student_detail" />
+    <fragment
+        android:id="@+id/bagListFragment"
+        android:name="com.example.advweek4nrp.view.BagListFragment"
+        android:label="fragment_bag_list"
+        tools:layout="@layout/fragment_bag_list" >
+        <action
+            android:id="@+id/actionBagListFragment"
+            app:destination="@id/studentListFragment" />
+    </fragment>
 </navigation>

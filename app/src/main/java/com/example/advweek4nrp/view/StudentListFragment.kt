@@ -36,7 +36,16 @@ class StudentListFragment : Fragment() {
         binding.recView.adapter = studentListAdapter
 
         observeViewModel() //bagaimana cara mengobserve data kita ada student, error, loading
+
+        binding.refreshLayout.setOnRefreshListener {
+            binding.recView.visibility = View.GONE
+            binding.txtErrorr.visibility = View.GONE
+            binding.progressLoad.visibility = View.VISIBLE
+            viewModel.refresh()
+            binding.refreshLayout.isRefreshing = false
+        }
     }
+
 
     fun observeViewModel() {
         viewModel.studentsLD.observe(viewLifecycleOwner, Observer {
