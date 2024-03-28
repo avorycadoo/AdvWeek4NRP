@@ -23,9 +23,5 @@
         android:id="@+id/bagListFragment"
         android:name="com.example.advweek4nrp.view.BagListFragment"
         android:label="fragment_bag_list"
-        tools:layout="@layout/fragment_bag_list" >
-        <action
-            android:id="@+id/actionBagListFragment"
-            app:destination="@id/studentListFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_bag_list" />
 </navigation>

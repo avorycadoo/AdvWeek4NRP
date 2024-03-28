@@ -25,15 +25,9 @@ class BagListAdapter(val bagList: ArrayList<Bag>)
     }
 
     override fun onBindViewHolder(holder: BagViewHolder, position: Int) {
-        val currentBag = bagList[position]
+
         holder.binding.txtIDBags.text = bagList[position].id
         holder.binding.txtNameBag.text = bagList[position].name
-
-        // Set up navigation to detail fragment with current bag's ID
-        holder.binding.root.setOnClickListener {
-            val action = BagListFragmentDirections.actionBagListFragment()
-            Navigation.findNavController(it).navigate(action)
-        }
     }
 
     fun updateBagList(newBagList: ArrayList<Bag>) {

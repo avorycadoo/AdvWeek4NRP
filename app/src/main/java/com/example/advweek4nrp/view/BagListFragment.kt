@@ -32,19 +32,21 @@ class BagListFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(BagsViewModel::class.java)
         viewModel.refresh()
-        bagListAdapter = BagListAdapter(arrayListOf())
-        binding.recView.layoutManager = LinearLayoutManager(context)
-        binding.recView.adapter = bagListAdapter
 
-        observeViewModel()
+        bagListAdapter = BagListAdapter(arrayListOf())
+        binding.recViewBag.layoutManager = LinearLayoutManager(context)
+        binding.recViewBag.adapter = bagListAdapter
+
+
 
         binding.refreshLayout.setOnRefreshListener {
-            binding.recView.visibility = View.GONE
+            binding.recViewBag.visibility = View.GONE
             binding.txtErrorr2.visibility = View.GONE
             binding.progressLoad2.visibility = View.VISIBLE
             viewModel.refresh()
             binding.refreshLayout.isRefreshing = false
         }
+        observeViewModel()
     }
 
     fun observeViewModel() {
@@ -63,10 +65,10 @@ class BagListFragment : Fragment() {
 
         viewModel.loadingLD.observe(viewLifecycleOwner, Observer {
             if(it == true) {
-                binding.recView.visibility = View.GONE
+                binding.recViewBag.visibility = View.GONE
                 binding.progressLoad2.visibility = View.VISIBLE
             } else {
-                binding.recView.visibility = View.VISIBLE
+                binding.recViewBag.visibility = View.VISIBLE
                 binding.progressLoad2.visibility = View.GONE
             }
         })
