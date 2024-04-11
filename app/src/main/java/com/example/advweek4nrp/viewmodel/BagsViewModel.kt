@@ -17,8 +17,8 @@ import com.google.gson.reflect.TypeToken
 class BagsViewModel(application: Application): AndroidViewModel(application)
 {
 //    private val TAG = "BagsViewModel"
-    val bagLoadErrorLD = MutableLiveData<Boolean>()
-    val loadingLD = MutableLiveData<Boolean>()
+//    val bagLoadErrorLD = MutableLiveData<Boolean>()
+//    val loadingLD = MutableLiveData<Boolean>()
     val bagLD = MutableLiveData<ArrayList<Bag>>()
     private var queue: RequestQueue? = null
     val TAG = "volleyTag"
@@ -31,8 +31,8 @@ class BagsViewModel(application: Application): AndroidViewModel(application)
 //        get() = bagLD
 
     fun refresh() {
-        bagLoadErrorLD.value = false
-        loadingLD.value = true
+//        bagLoadErrorLD.value = false
+//        loadingLD.value = true
 
         queue = Volley.newRequestQueue(getApplication())
         val url = "https://10.0.0.2/bags/bags.json"
@@ -40,19 +40,13 @@ class BagsViewModel(application: Application): AndroidViewModel(application)
         val stringRequest = StringRequest(
             Request.Method.GET, url,
             {
-                loadingLD.value = false
-                Log.d("showvoley", it)
                 val sType = object : TypeToken<List<Bag>>() { }.type
                 val result = Gson().fromJson<List<Bag>>(it, sType)
                 bagLD.value = result as ArrayList<Bag>?
-                loadingLD.value = false
-
-                Log.d("showvoley", result.toString())
+                Log.d("showvoley", it.toString())
             },
             {
                 Log.d("showvoley", it.toString())
-                bagLoadErrorLD.value = false
-                loadingLD.value = false
             })
         stringRequest.tag = TAG
         queue?.add(stringRequest)

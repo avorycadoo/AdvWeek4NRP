@@ -15,8 +15,9 @@ import com.example.advweek4nrp.viewmodel.BagsViewModel
 
 class BagListFragment : Fragment() {
     private lateinit var binding: FragmentBagListBinding
-    private lateinit var bagListAdapter: BagListAdapter
     private lateinit var viewModel: BagsViewModel
+    private val bagListAdapter  = BagListAdapter(arrayListOf())
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,19 +34,16 @@ class BagListFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(BagsViewModel::class.java)
         viewModel.refresh()
 
-        bagListAdapter = BagListAdapter(arrayListOf())
         binding.recViewBag.layoutManager = LinearLayoutManager(context)
         binding.recViewBag.adapter = bagListAdapter
 
-
-
-        binding.refreshLayout.setOnRefreshListener {
-            binding.recViewBag.visibility = View.GONE
-            binding.txtErrorr2.visibility = View.GONE
-            binding.progressLoad2.visibility = View.VISIBLE
-            viewModel.refresh()
-            binding.refreshLayout.isRefreshing = false
-        }
+//        binding.refreshLayout.setOnRefreshListener {
+//            binding.recViewBag.visibility = View.GONE
+//            binding.txtErrorr2.visibility = View.GONE
+//            binding.progressLoad2.visibility = View.VISIBLE
+//            viewModel.refresh()
+//            binding.refreshLayout.isRefreshing = false
+//        }
         observeViewModel()
     }
 
@@ -55,23 +53,23 @@ class BagListFragment : Fragment() {
             bagListAdapter.updateBagList(it)
         })
 
-        viewModel.bagLoadErrorLD.observe(viewLifecycleOwner, Observer {
-            if(it == true) {
-                binding.txtErrorr2?.visibility = View.VISIBLE
-            } else {
-                binding.txtErrorr2?.visibility = View.GONE
-            }
-        })
-
-        viewModel.loadingLD.observe(viewLifecycleOwner, Observer {
-            if(it == true) {
-                binding.recViewBag.visibility = View.GONE
-                binding.progressLoad2.visibility = View.VISIBLE
-            } else {
-                binding.recViewBag.visibility = View.VISIBLE
-                binding.progressLoad2.visibility = View.GONE
-            }
-        })
+//        viewModel.bagLoadErrorLD.observe(viewLifecycleOwner, Observer {
+//            if(it == true) {
+//                binding.txtErrorr2?.visibility = View.VISIBLE
+//            } else {
+//                binding.txtErrorr2?.visibility = View.GONE
+//            }
+//        })
+//
+//        viewModel.loadingLD.observe(viewLifecycleOwner, Observer {
+//            if(it == true) {
+//                binding.recViewBag.visibility = View.GONE
+//                binding.progressLoad2.visibility = View.VISIBLE
+//            } else {
+//                binding.recViewBag.visibility = View.VISIBLE
+//                binding.progressLoad2.visibility = View.GONE
+//            }
+//        })
 
 
     }

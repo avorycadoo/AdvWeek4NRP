@@ -1,12 +1,16 @@
 package com.example.advweek4nrp.view
 
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.advweek4nrp.databinding.FragmentStudentListBinding
 import com.example.advweek4nrp.databinding.StudentListItemBinding
 import com.example.advweek4nrp.model.Student
+import com.squareup.picasso.Callback
+import com.squareup.picasso.Picasso
 
 class StudentListAdapter(val studentList:ArrayList<Student>)
     :RecyclerView.Adapter<StudentListAdapter.StudentViewHolder>()
@@ -30,14 +34,30 @@ class StudentListAdapter(val studentList:ArrayList<Student>)
         holder.binding.txtName.text = studentList[position].name
 
         holder.binding.btnDetail.setOnClickListener {
-            val action = StudentListFragmentDirections.actionStudentDetailFragment()
+//            val student = studentList[position]  // Get the current student object
+//            val studentId = student.id
+            val action = StudentListFragmentDirections.actionStudentDetailFragment(studentList[position].id.toString())
             Navigation.findNavController(it).navigate(action)
         }
 
+        val picasso = Picasso.Builder(holder.itemView.context)
+        picasso.listener { picasso, uri, exception ->
+            exception.printStackTrace()
+        }
+        picasso.build().load(studentList[position].photoUrl).into(holder.binding.imgPhoto, object:
+            Callback{
+            override fun onSuccess() {
+                holder.binding.progressImage.visibility = View.INVISIBLE
+                holder.binding.imgPhoto.visibility = View.VISIBLE
+            }
 
-
+            override fun onError(e: Exception?) {
+                Log.e("picasso_error", e.toString())
+            }
+            })
 
     }
+
     fun updateStudentList(newStudentList: ArrayList<Student>) {
         studentList.clear()
         studentList.addAll(newStudentList)
