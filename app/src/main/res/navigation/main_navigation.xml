@@ -26,6 +26,9 @@
         <argument
             android:name="studentId"
             app:argType="string" />
+        <action
+            android:id="@+id/actionStudentListFragment"
+            app:destination="@id/studentListFragment" />
     </fragment>
     <fragment
         android:id="@+id/bagListFragment"
